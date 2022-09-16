@@ -89,7 +89,7 @@ const Rocket: NextPageWithLayout = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="3"
-                    className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+                    className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -108,7 +108,7 @@ const Rocket: NextPageWithLayout = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="3"
-                    className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+                    className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -127,7 +127,7 @@ const Rocket: NextPageWithLayout = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="3"
-                    className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+                    className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -146,7 +146,7 @@ const Rocket: NextPageWithLayout = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="3"
-                    className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+                    className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -165,7 +165,7 @@ const Rocket: NextPageWithLayout = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="3"
-                    className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+                    className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -184,7 +184,7 @@ const Rocket: NextPageWithLayout = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="3"
-                    className="text-indigo-400 w-6 h-6 flex-shrink-0 mr-4"
+                    className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
                   >
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -196,7 +196,7 @@ const Rocket: NextPageWithLayout = () => {
                 </div>
               </div>
             </div>
-            <a href={rocketInfos?.wikipedia} className="flex w-36 justify-center mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <a href={rocketInfos?.wikipedia} className="flex w-36 justify-center mx-auto mt-16 text-white bg-sky-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Wikipedia
             </a>
           </>

@@ -37,7 +37,7 @@ const Home: NextPageWithLayout = () => {
       <main>
         <>
           <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
-            <h1 className="text-5xl text-white ml-8 my-10">Rockets</h1>
+            <h1 className="text-5xl text-white ml-8 my-10 text-center">Rockets</h1>
             {loading || !data ? (
               <p>Data loading...</p>
             ) : (
@@ -52,10 +52,9 @@ const Home: NextPageWithLayout = () => {
                         <h2 className="text-2xl font-medium text-white title-font mb-2">
                           {rocket.name}
                         </h2>
-                        <p className="leading-relaxed">{rocket.description}</p>
-                        <Link href={`/rockets/${rocket.id}`} className="text-indigo-400 inline-flex items-center mt-4">
-                          Learn More
-                          
+                        <p className="leading-relaxed mb-4">{rocket.description}</p>
+                        <Link href={`/rockets/${rocket.id}`}>
+                          <p className="text-sky-600 inline-flex items-center cursor-pointer">Learn More &#8594;</p>
                         </Link>
                       </div>
                     </div>
