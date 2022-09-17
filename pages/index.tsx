@@ -37,7 +37,9 @@ const Home: NextPageWithLayout = () => {
       <main>
         <>
           <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
-            <h1 className="text-5xl text-white ml-8 my-10 text-center">Rockets</h1>
+            <div className="container mx-auto pl-5">
+              <h1 className="text-5xl text-white mt-16 mb-10">Rockets</h1>
+            </div>
             {loading || !data ? (
               <p>Data loading...</p>
             ) : (

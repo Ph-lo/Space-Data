@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = "default" }: Props) => (
-  <div className="relative h-screen">
+  <div className="relative h-screen bg-gray-900">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -19,15 +19,17 @@ const Layout = ({ children, title = "default" }: Props) => (
     </Head>
     <header className="fixed z-100 w-full text-gray-400 bg-gray-900 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-          <Image src={Logo} alt="logo space shuttle" />
-          <span className="ml-3 text-xl">SpaceX data</span>
-        </a>
+        <Link href={"/"} className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+          <Image className="cursor-pointer" src={Logo} alt="logo space shuttle" />
+        </Link>
+        <Link href={"/"} className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+          <span className="cursor-pointer ml-3 text-3xl text-white font-semibold">SpaceX data</span>
+        </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <a className="mr-5 hover:text-white">Missions</a>
           <a className="mr-5 hover:text-white">Upcoming launches</a>
           <Link href={"/launches/pastLaunches"} className="mr-5 hover:text-white"><p className="mr-5 hover:text-white cursor-pointer">Past launches</p></Link>
-          <a className="mr-5 hover:text-white">ISS position</a>
+          <Link href={"/issPosition"} className="mr-5 hover:text-white">ISS position</Link>
         </nav>
         <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
           Button
@@ -45,7 +47,7 @@ const Layout = ({ children, title = "default" }: Props) => (
         </button>
       </div>
     </header>
-    <main className="pt-16">{children}</main>
+    <main className="z-0 pt-16">{children}</main>
   </div>
 );
 

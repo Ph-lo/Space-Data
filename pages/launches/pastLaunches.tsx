@@ -85,12 +85,14 @@ const Launches: NextPageWithLayout = () => {
       <main>
         <>
           <section className="text-gray-400 bg-gray-900 body-font">
-            <h1 className="text-5xl text-white text-center mt-10">Past launches</h1>
+            <div className="container mx-auto pl-5">
+              <h1 className="text-5xl text-white mt-16">Past launches</h1>
+            </div>
             {loading || !data ? (
               <p>Data loading...</p>
             ) : (
               <>
-                <div className="container px-5 py-24 mx-auto flex flex-wrap">
+                <div className="container px-5 py-16 mx-auto flex flex-wrap">
                   <div className="flex flex-wrap -m-4">
                     {data.launchesPast.map((launch) => (
                       <div key={launch.id} className="p-4 lg:w-1/2 md:w-full">
@@ -112,20 +114,12 @@ const Launches: NextPageWithLayout = () => {
                     
                   </div>
                 </div>
-                <div className={offset > 0 ? "flex justify-between p-5" : "flex justify-end p-5"}>
-                  {offset > 0 && <button onClick={() => previousPage()} className="text-2xl bg-slate-700 px-3 py-1 rounded-sm">&larr; Previous</button>}
-                  <button onClick={() => nextPage()} className="text-2xl bg-slate-700 px-3 py-1 rounded-sm">Next &rarr;</button>
+                <div className={offset > 0 ? "flex mx-auto justify-around p-5" : "flex w-5/6 justify-end p-5"}>
+                  {offset > 0 && <button onClick={() => previousPage()} className="text-2xl bg-sky-900 px-3 py-1 rounded-sm">&larr; Prev</button>}
+                  <button onClick={() => nextPage()} className="text-2xl bg-sky-900 px-3 py-1 rounded-sm">Next &rarr;</button>
                 </div>
               </>
             )}
-          </section>
-          <section className="text-gray-400 bg-gray-900 body-font">
-            <div className="container px-5 py-24 mx-auto flex flex-wrap">
-              <div className="flex flex-wrap -m-4">
-                
-                
-              </div>
-            </div>
           </section>
         </>
       </main>
