@@ -28,14 +28,11 @@ const Layout = ({ children, title = "default" }: Props) => (
         <Link href={"/"} className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
           <h1 className="flex -mt-3 ml-5 title-font font-medium items-center text-white md:mb-0">
           <Image className="cursor-pointer" src={spacex} alt="logo spacex" />
-          <span className="-ml-4 mt-2 text-slate-400 text-3xl">- Data</span>
+          <span className="cursor-pointer -ml-4 mt-2 text-slate-400 text-3xl">- Data</span>
           </h1>
         </Link>
-       {/*  <Link href={"/"} className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-          <span className="cursor-pointer ml-3 text-3xl text-white font-semibold">SpaceX data</span>
-        </Link> */}
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-white">Missions</a>
+          <Link href={"/missions"}><p className="cursor-pointer mr-5 hover:text-white">Mission</p></Link>
           <a className="mr-5 hover:text-white">Upcoming launches</a>
           <Link href={"/launches/pastLaunches"} className="mr-5 hover:text-white"><p className="mr-5 hover:text-white cursor-pointer">Past launches</p></Link>
           <Link href={"/issPosition"} className="mr-5 hover:text-white">ISS position</Link>

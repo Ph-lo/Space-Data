@@ -46,10 +46,6 @@ rocket {
 id
 `;
 
-const getTotalPages = () => {
-
-};
-
 const Launches: NextPageWithLayout = () => {
   const [offset, setOffset] = useState(0)
   const LAUNCHES = gql`
@@ -92,7 +88,7 @@ const Launches: NextPageWithLayout = () => {
               <p>Data loading...</p>
             ) : (
               <>
-                <div className="container px-5 py-16 mx-auto flex flex-wrap">
+                <div className="container px-5 pt-16 mx-auto flex flex-wrap">
                   <div className="flex flex-wrap -m-4">
                     {data.launchesPast.map((launch) => (
                       <div key={launch.id} className="p-4 lg:w-1/2 md:w-full">
@@ -114,7 +110,7 @@ const Launches: NextPageWithLayout = () => {
                     
                   </div>
                 </div>
-                <div className={offset > 0 ? "flex mx-auto justify-around p-5" : "flex w-5/6 justify-end p-5"}>
+                <div className={offset > 0 ? "flex mx-auto justify-around p-5 pb-16 mt-3" : "flex w-5/6 justify-end p-5 pb-16 mt-3"}>
                   {offset > 0 && <button onClick={() => previousPage()} className="text-2xl bg-sky-900 px-3 py-1 rounded-sm">&larr; Prev</button>}
                   <button onClick={() => nextPage()} className="text-2xl bg-sky-900 px-3 py-1 rounded-sm">Next &rarr;</button>
                 </div>

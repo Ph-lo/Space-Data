@@ -43,7 +43,7 @@ const rocketsImages = {
 };
 type rocketsImgKey = keyof typeof rocketsImages;
 
-const Home: NextPageWithLayout = () => {
+const Rockets: NextPageWithLayout = () => {
   const { loading, error, data } = useQuery<RocketsResult>(ROCKETS);
 
   console.log(data);
@@ -115,8 +115,8 @@ const Home: NextPageWithLayout = () => {
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Rockets.getLayout = function getLayout(page: ReactElement) {
   return <Layout title="Index">{page}</Layout>;
 };
 
-export default Home;
+export default Rockets;
