@@ -80,13 +80,13 @@ const Missions: NextPageWithLayout = () => {
                     {data.missions.map((mission) => (
                       <div className="-my-8 divide-y-2 divide-gray-800">
                         <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
-                          <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                          <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex">
                             <span className="mb-4 font-semibold title-font text-white">
                                 <a href={mission.wikipedia}>
                                 <Image src={wikipedia} alt='wikipedia logo' />
                                 </a>
                             </span>
-                            <span className="mt-1 text-gray-500 text-sm">
+                            <span className="ml-5 text-gray-500 text-sm">
                                 <a href={mission.twitter}>
                                 <Image src={twitter} alt='twitter logo' />
                                 </a>

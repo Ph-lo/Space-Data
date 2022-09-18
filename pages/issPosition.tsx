@@ -55,7 +55,7 @@ const issPosition: NextPageWithLayout = () => {
           </div>
           
         </div>
-        <div className="xs:mt-590px lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <div className="xs:mt-590px xs:ml-0 lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
           
           <div className="flex justify-between flex-wrap">
           <h2 className="bg-gray-800 bg-opacity-60 h-fit pl-3 py-1.5 text-white text-md mb-2 font-medium title-font w-4242">
