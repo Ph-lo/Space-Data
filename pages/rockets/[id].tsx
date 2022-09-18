@@ -86,8 +86,8 @@ const Rocket: NextPageWithLayout = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="3"
                     className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
@@ -105,8 +105,8 @@ const Rocket: NextPageWithLayout = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="3"
                     className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
@@ -124,8 +124,8 @@ const Rocket: NextPageWithLayout = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="3"
                     className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
@@ -143,8 +143,8 @@ const Rocket: NextPageWithLayout = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="3"
                     className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
@@ -162,8 +162,8 @@ const Rocket: NextPageWithLayout = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="3"
                     className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
@@ -181,8 +181,8 @@ const Rocket: NextPageWithLayout = () => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke-width="3"
                     className="text-sky-600 w-6 h-6 flex-shrink-0 mr-4"
                     viewBox="0 0 24 24"
@@ -196,7 +196,7 @@ const Rocket: NextPageWithLayout = () => {
                 </div>
               </div>
             </div>
-            <a href={rocketInfos?.wikipedia} className="flex w-36 justify-center mx-auto mt-16 text-white bg-sky-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <a href={rocketInfos?.wikipedia} className="flex w-36 justify-center mx-auto mt-16 text-white bg-sky-700 border-0 py-2 px-8 focus:outline-none hover:bg-sky-800 rounded text-lg">
               Wikipedia
             </a>
           </>

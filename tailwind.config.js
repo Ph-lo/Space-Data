@@ -6,16 +6,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "spacexLogo": "url('../assets/logo.png')",
+      },
       width: {
         '4242': '49%'
       },
       screens: {
-        xs: {'max': '765px'}
+        xs: {'max': '769px'}
       },
       margin: {
         '590px': '590px'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

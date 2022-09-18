@@ -114,7 +114,7 @@ const Launch: NextPageWithLayout = () => {
                   <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
                     {data.launch.links.video_link ? (
                         <iframe className="object-cover object-center lg: w-full rounded" src={toEmbed(data.launch.links.video_link)}
-                        allow='autoplay; encrypted-media'
+                        allow='autoplay; encrypted-media; fullscreen'
                         width={500}
                         height={300}
                         title='video'
