@@ -2,25 +2,13 @@ import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import 'leaflet-defaulticon-compatibility';
+import Switch from 'react-switch';
 import { MapContainer, TileLayer, Marker, useMap, Popup } from 'react-leaflet';
 import { LatLngExpression } from 'leaflet';
 import L from 'leaflet'
 
-// WILL BE USED TO ADD FOCUS
 export function ChangeView({ coords }: any) {
-    const map = useMap();
-  //  L.marker(coords, {icon: deathstar}).addTo(map);
-  /* const lightLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  });
-  const darkLayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  });
-  const baseMap = {
-    "Dark theme": darkLayer,
-    "Light theme": lightLayer
-  }
-  L.control.layers(baseMap).addTo(map) */
+  const map = useMap();
   map.setView(coords);
   return null;
 }
@@ -31,14 +19,40 @@ type Props = {
     first: boolean;
 };
 
-console.log()
+//console.log()
+const themes = {
+    dark: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
+    light: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+};
+
+/* const MapControls = () => {
+    const map = useMap();
+    const lightTheme = L.tileLayer(themes.light, {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    });
+    const darkTheme = L.tileLayer(themes.dark, {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    });
+    const ctrls = {
+        "Dark": darkTheme,
+        "Light": lightTheme
+    };
+    //const mapCtrls = L.control.layers(ctrls).addTo(map);
+    //map.removeControl(mapCtrls);
+    return null;
+}; */
+
+type Theme = {
+    theme: string;
+    checked: boolean;
+};
 
 export default function Map() {
   const [geoData, setGeoData] = useState<Props>({ lat: null, lng: null, first: true });
+  const [theme, setTheme] = useState<Theme>({theme: themes.light, checked: false});
+  const [focus, setFocus] = useState<boolean>(false);
   //const map = useMap();
   const center = [geoData.lat, geoData.lng];
-  
-  //const layerCtrl = L.control.layers(baseMap).addTo(map);
 
   const fetchData = () => {
     fetch("http://api.open-notify.org/iss-now.json", {
@@ -57,29 +71,62 @@ export default function Map() {
         fetchData();
     }, 100);
     return () => clearInterval(interval);
-  }, []);
+  }, [theme]);
 
+  const themeSwitch = () => {
+    console.log(theme)
+    if (theme.theme === themes.light) {
+        setTheme({theme: themes.dark, checked: true});
+    } else {
+        setTheme({theme: themes.light, checked: false});
+    }
+  };
+
+  const handleFocus = () => {
+    setFocus(current => !current);
+  };
  
   return (
     <>
     {(geoData.lat !== null && geoData.lng !== null) && (
-    <MapContainer className='map-container' preferCanvas={true} center={center as LatLngExpression} zoom={4} style={{ height: '530px', zIndex: '0' }}>
-      <TileLayer
+    <>
+    <div className='flex items-center mb-2'>
+        <Switch
+            onChange={handleFocus}
+            checked={focus}
+            className="react-switch"
+            onColor="#0369A1"
+            uncheckedIcon={false}
+            checkedIcon={false}
+            offColor={"#949CA1"}
+            handleDiameter={20}
+            height={21}
+            width={40}
+        />
+        <p className='ml-3'>Stay focused</p>
+    </div>
+    <MapContainer preferCanvas={true} center={center as LatLngExpression} zoom={4} style={{ height: '530px', zIndex: '0' }}>
+      
+        <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        //url={theme.theme}
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        //url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
         
       />
+      
         <Marker 
             position={[geoData.lat, geoData.lng]}             
         >
             <Popup>This is the ISS position</Popup>
         </Marker>
-            {geoData.first && (
-        <ChangeView coords={center} />
-          )}
+        {focus && (
+            <ChangeView coords={center} />
+        )}
+        {/* <MapControls /> */}
       
-    </MapContainer>)}
+    </MapContainer>
+    </>
+    )}
     </>
   );
 }

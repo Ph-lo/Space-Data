@@ -1,3 +1,13 @@
 .map-container {
-    position: static !important;
+    border-radius: 10px;
+
+}
+.leaflet-container {
+    border-radius: 10px;
+    -moz-border-radius:10px;
+    -khtml-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.react-switch-handle {
+    margin-left: -5px;
 }

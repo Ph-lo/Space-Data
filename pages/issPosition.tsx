@@ -39,8 +39,8 @@ const issPosition: NextPageWithLayout = () => {
   console.log();
   return (
     <section className="sm:mt-16 xs:mt-32 text-gray-400 bg-gray-900 body-font">
-      <div className="container px-5 mx-auto">
-      <h2 className="text-white text-3xl mb-2 font-medium title-font">
+      <div className="container px-5 mx-auto mb-14">
+      <h2 className="text-white text-3xl mb-2 font-medium title-font mb-3">
             International Space Station
           </h2>
           <p className="leading-relaxed mb-5">
@@ -50,7 +50,7 @@ const issPosition: NextPageWithLayout = () => {
       </div>
       <div className="container px-5 py-5 mx-auto -mt-10 flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg sm:mr-10 justify-start">
-          <div className="xs:absolute xs:-ml-8 relative w-full mt-8">
+          <div className="xs:absolute xs:-ml-8 relative w-full mt-0">
             <MapWithNoSSR />
           </div>
           
