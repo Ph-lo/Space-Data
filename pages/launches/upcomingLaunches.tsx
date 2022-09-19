@@ -8,11 +8,6 @@ import Image from "next/image";
 import shuttle from "../../assets/shuttle3.png";
 import Link from "next/link";
 
-type Props = {
-  title: string;
-  query: string;
-};
-
 interface LaunchesData {
   id: string;
   mission_name: string;
@@ -128,6 +123,8 @@ const Launches: NextPageWithLayout = () => {
   );
 };
 
-
+Launches.getLayout = function getLayout(page: ReactElement) {
+  return <Layout title="Index">{page}</Layout>;
+};
 
 export default Launches;
