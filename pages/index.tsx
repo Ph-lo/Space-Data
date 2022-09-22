@@ -11,7 +11,12 @@ import Link from "next/link";
 const Home: NextPageWithLayout = () => {
   return (
     <section className="xs:mt-16 text-gray-400 bg-gray-900 body-font">
-      <div className="container mx-auto flex px-5 py-24 lg:flex-row flex-col items-center">
+        <div className="container w-full mx-auto">
+        <h1 className="title-font mt-16 text-center sm:text-xl text-xl underline underline-offset-4 decoration-1 mb-4 font-light text-white">
+          Space-Data is a projet about space vehicles and missions using mostly SpaceX data. 
+        </h1>
+        </div>
+      <div className="container mx-auto flex px-5 py-16 lg:flex-row flex-col items-center">
         <div className="lg:max-w-lg lg:w-full lg:w-1/2 w-5/6 mb-10 md:mb-10">
           <Image
             className="object-cover object-center rounded"
@@ -28,9 +33,7 @@ const Home: NextPageWithLayout = () => {
             space launch provider, and a satellite communications corporation
             headquartered in Hawthorne, California. It was founded in 2002 by
             Elon Musk, with the goal of reducing space transportation costs to
-            enable the colonization of Mars. It manufactures the Falcon 9 and
-            Falcon Heavy launch vehicles, several rocket engines, Cargo Dragon,
-            crew spacecraft, and Starlink communications satellites.
+            enable the colonization of Mars.
           </p>
           <div className="text-center">
             <span className="inline-block h-1 w-10 rounded bg-sky-700 mt-8 mb-6"></span>

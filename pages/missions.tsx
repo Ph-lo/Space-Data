@@ -35,14 +35,15 @@ const getTotalPages = () => {};
 
 const Missions: NextPageWithLayout = () => {
   const [offset, setOffset] = useState(0);
-  const LAUNCHES = gql`
+  const [dropDown, setDropDown] = useState<{toggle: boolean, elem: string}>({toggle: false, elem: ""});
+  const MISSIONS = gql`
   query {
     missions(limit: 10, offset: ${offset}) {
       ${query}
     }
   }
 `;
-  const { loading, error, data } = useQuery<MissionsResult>(LAUNCHES);
+  const { loading, error, data } = useQuery<MissionsResult>(MISSIONS);
 
   const nextPage = () => {
     window.scrollTo({
@@ -62,7 +63,15 @@ const Missions: NextPageWithLayout = () => {
     setOffset(offset - 10);
   };
 
-  console.log(data);
+  const toggleDropDown = (elemId: string) => {
+    if (elemId === dropDown.elem) {
+      setDropDown({toggle: (dropDown.toggle ? false : true), elem: elemId})
+    } else {
+      setDropDown({toggle: true, elem: elemId})
+    }
+  };
+
+//  console.log(data);
   return (
     <div>
       <main>
@@ -96,11 +105,22 @@ const Missions: NextPageWithLayout = () => {
                             <h2 className="text-2xl font-medium text-white title-font mb-2">
                               {mission.name}
                             </h2>
-                            <p className="leading-relaxed">
-                              {mission.description}
-                            </p>
-                            <a title="Official website" href={mission.website} className="mb-8 text-indigo-400 inline-flex items-center mt-4">
-                              Learn More
+                            <div className="flex">
+                              {(dropDown.toggle && dropDown.elem === mission.id) ? (
+                                <p className="leading-relaxed">
+                                  {mission.description}
+                                </p>
+                              ) : (
+                                <p className="leading-relaxed line-clamp-4">
+                                  {mission.description}
+                                </p>
+                              )}
+                              <div className="flex flex-col justify-end ml-3">
+                                <button onClick={() => toggleDropDown(mission.id)} className="border-2 border-sky-800 text-sky-800 hover:text-sky-600 hover:border-sky-600 rounded-xl h-6 w-6"> {(dropDown.toggle && dropDown.elem === mission.id) ? <p className="mt-0.5">^</p> : <p className="-mt-1.5">⌄</p> } </button>
+                              </div>
+                            </div>
+                            <a title="Official website" href={mission.website} className="mb-8 mt-9 text-sky-600 inline-flex items-center mt-4">
+                              Official website
                               &#8594;
                             </a>
                           </div>

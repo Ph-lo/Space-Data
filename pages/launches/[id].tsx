@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Layout from "../../components/Layout";
-import shuttle from "../../assets/shuttle2.png"
+import shuttle from "../../assets/rocket-launch.gif";
 import { gql, useQuery } from "@apollo/client";
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "../_app";
@@ -100,7 +100,7 @@ const Launch: NextPageWithLayout = () => {
     return embedded;
   };
 
-  console.log(data);
+  //console.log(data);
   return (
     <div>
       <main>
@@ -110,6 +110,9 @@ const Launch: NextPageWithLayout = () => {
               <p>Data loading...</p>
             ) : (
                 <>
+                <div className="container mx-auto pl-5">
+                  <button onClick={() => router.back()} className="bg-sky-900 w-12 h-12 rounded-3xl rotate-180 text-2xl text-gray-300">&#x2794;</button>
+                </div>
                 <div className="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
                   <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
                     {data.launch.links.video_link ? (
@@ -120,7 +123,10 @@ const Launch: NextPageWithLayout = () => {
                         title='video'
                         />
                     ) : (
-                        <Image className="object-cover object-center rounded" alt="hero" src={shuttle} />
+                      <div className="relative w-fit">
+                        <h2 className="z-10 absolute top-5 left-0 right-0 mx-auto -mr-5 font-bold text-2xl text-center">No video yet !</h2>
+                        <Image className="z-0 object-cover object-center rounded" alt="hero" src={shuttle} />
+                      </div>
                     )}
                     
                   </div>

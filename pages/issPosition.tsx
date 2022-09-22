@@ -89,7 +89,7 @@ const issPosition: NextPageWithLayout = () => {
                         <circle cx="12" cy="7" r="4"></circle>
                       </svg>
                     </div>
-                    <h2 className="h-fit pl-3 py-1.5 text-white text-md mb-2 font-medium title-font">
+                    <h2 className="h-fit pl-3 py-1.5 text-white text-sm mb-2 font-light max-w-[110px]">
                       {astronaut.name}
                     </h2>
                   </div>

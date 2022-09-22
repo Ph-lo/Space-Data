@@ -66,11 +66,13 @@ const Rocket: NextPageWithLayout = () => {
 
   return (
     <section className="text-gray-400 bg-gray-900 body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-14 mx-auto">
         {loading ? (
           <p>Loading...</p>
         ) : (
           <>
+            <button onClick={() => router.back()} className="bg-sky-900 w-12 h-12 rounded-3xl rotate-180 text-2xl text-gray-300">&#x2794;</button>
+            
             <div className="text-center mb-20">
               <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">
                 {rocketInfos?.name}

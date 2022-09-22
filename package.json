@@ -11,6 +11,7 @@
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "flowbite": "^1.5.3",
     "graphql": "^16.6.0",
     "leaflet": "^1.8.0",
     "leaflet-defaulticon-compatibility": "^0.1.1",
