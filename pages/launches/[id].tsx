@@ -7,6 +7,7 @@ import { NextPageWithLayout } from "../_app";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import Loader from "../../components/Loader";
 
 interface LaunchData {
   id: string;
@@ -107,7 +108,7 @@ const Launch: NextPageWithLayout = () => {
         <>
           <section className="text-gray-400 bg-gray-900 body-font pt-16">
             {loading || !data ? (
-              <p>Data loading...</p>
+              <Loader />
             ) : (
                 <>
                 <div className="container mx-auto pl-5">

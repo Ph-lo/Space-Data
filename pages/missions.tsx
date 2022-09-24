@@ -8,6 +8,7 @@ import twitter from "../assets/twitter-logo.png";
 import wikipedia from "../assets/wikipedia.png";
 import Image from "next/image";
 import Link from "next/link";
+import Loader from "../components/Loader";
 
 interface MissionsData {
   description: string;
@@ -81,7 +82,7 @@ const Missions: NextPageWithLayout = () => {
               <h1 className="text-5xl text-white mt-16">Missions</h1>
             </div>
             {loading || !data ? (
-              <p>Data loading...</p>
+              <Loader />
             ) : (
               <>
                 <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">

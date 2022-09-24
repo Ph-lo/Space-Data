@@ -4,6 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "../_app";
 import Launches from "../../components/Launches";
+import Loader from "../../components/Loader";
 
 interface LaunchesData {
   id: string;
@@ -64,7 +65,7 @@ const upcomingLaunches: NextPageWithLayout = () => {
               <h1 className="text-5xl text-white mt-16">Upcoming launches</h1>
             </div>
             {loading || !data ? (
-              <p>Data loading...</p>
+              <Loader />
             ) : (
               <>
                 <Launches launches={data.launchesUpcoming} offset={offset} setOffset={setOffset} />

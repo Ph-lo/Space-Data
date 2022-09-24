@@ -6,6 +6,7 @@ import Switch from 'react-switch';
 import { MapContainer, TileLayer, Marker, useMap, Popup } from 'react-leaflet';
 import { LatLngExpression } from 'leaflet';
 import L from 'leaflet'
+import Loader from "../../components/Loader";
 
 export function ChangeView({ coords }: any) {
   const map = useMap();
@@ -88,7 +89,7 @@ export default function Map() {
  
   return (
     <>
-    {(geoData.lat !== null && geoData.lng !== null) && (
+    {(geoData.lat !== null && geoData.lng !== null) ? (
     <>
     <div className='flex items-center mb-2'>
         <Switch
@@ -126,6 +127,8 @@ export default function Map() {
       
     </MapContainer>
     </>
+    ) : (
+        <Loader />
     )}
     </>
   );

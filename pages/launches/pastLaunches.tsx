@@ -8,6 +8,7 @@ import Image from "next/image";
 import shuttle from "../../assets/shuttle3.png";
 import Link from "next/link";
 import Launches from "../../components/Launches";
+import Loader from "../../components/Loader";
 
 type Props = {
   title: string;
@@ -73,7 +74,7 @@ const pastLaunches: NextPageWithLayout = () => {
               <h1 className="text-5xl text-white mt-16">Past launches</h1>
             </div>
             {loading || !data ? (
-              <p>Data loading...</p>
+              <Loader />
             ) : (
               <>
                 <Launches launches={data.launchesPast} offset={offset} setOffset={setOffset} />

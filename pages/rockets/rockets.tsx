@@ -12,6 +12,7 @@ import falcon1 from '../../assets/falcon1.jpeg';
 import falcon9 from '../../assets/falcon9.jpeg';
 import falconheavy from '../../assets/falconheavy.jpeg';
 import starship from '../../assets/starship.jpeg';
+import Loader from '../../components/Loader';
 
 interface RocketData {
   id: string;
@@ -67,7 +68,7 @@ const Rockets: NextPageWithLayout = () => {
               </p>
             </div>
             {loading || !data ? (
-              <p>Data loading...</p>
+              <Loader />
             ) : (
                 <div className="container px-5 py-24 mx-auto">
               <div className="flex flex-wrap -m-4">
