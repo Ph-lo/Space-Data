@@ -5,6 +5,7 @@ import { NextPageWithLayout } from "./_app";
 import Link from "next/link";
 import Map from "../components/map/Map";
 import dynamic from "next/dynamic";
+import Loader from "../components/Loader";
 
 type Astronaut = {
   name: string;

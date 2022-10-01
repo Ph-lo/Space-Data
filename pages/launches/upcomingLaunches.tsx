@@ -79,7 +79,7 @@ const upcomingLaunches: NextPageWithLayout = () => {
 };
 
 upcomingLaunches.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="Index">{page}</Layout>;
+  return <Layout title="Upcoming launches">{page}</Layout>;
 };
 
 export default upcomingLaunches;

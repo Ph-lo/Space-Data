@@ -1,12 +1,8 @@
-import type { NextPage } from "next";
 import Layout from "../../components/Layout";
 import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "../_app";
-import Image from "next/image";
-import shuttle from "../../assets/shuttle3.png";
-import Link from "next/link";
 import Launches from "../../components/Launches";
 import Loader from "../../components/Loader";
 
@@ -88,7 +84,7 @@ const pastLaunches: NextPageWithLayout = () => {
 };
 
 pastLaunches.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="Index">{page}</Layout>;
+  return <Layout title="Past launches">{page}</Layout>;
 };
 
 

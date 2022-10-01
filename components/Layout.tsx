@@ -43,7 +43,7 @@ const Layout = ({ children, title = "default" }: Props) => (
           href={"/"}
           className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
         >
-          <h1 className="flex ml-5 title-font text-xl items-center text-white md:mb-0">
+          <h1 className="flex cursor-pointer ml-5 title-font text-xl items-center text-white md:mb-0">
              Space-Data
           </h1>
         </Link>
@@ -93,7 +93,9 @@ const Layout = ({ children, title = "default" }: Props) => (
             height={30}
           />
         </Link>
-            <span className="ml-3 text-xl">Space-data</span>
+        <Link href={'/'}>
+            <span className="cursor-pointer ml-3 text-xl">Space-data</span>
+        </Link>
           </a>
           <p className="mt-2 text-sm text-gray-500">
             A project to start working with Next.js and Graphql
@@ -135,7 +137,7 @@ const Layout = ({ children, title = "default" }: Props) => (
             all sources credited above
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-            <a className="text-gray-400">
+            <a href="https://www.facebook.com/spacenewsx/" className="text-gray-400">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -147,7 +149,7 @@ const Layout = ({ children, title = "default" }: Props) => (
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
               </svg>
             </a>
-            <a className="ml-3 text-gray-400">
+            <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" className="ml-3 text-gray-400">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -159,7 +161,7 @@ const Layout = ({ children, title = "default" }: Props) => (
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
               </svg>
             </a>
-            <a className="ml-3 text-gray-400">
+            <a href="https://www.instagram.com/spacex/?hl=en" className="ml-3 text-gray-400">
               <svg
                 fill="none"
                 stroke="currentColor"

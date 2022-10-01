@@ -176,7 +176,7 @@ const Launch: NextPageWithLayout = () => {
 };
 
 Launch.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="Index">{page}</Layout>;
+  return <Layout title="Launche">{page}</Layout>;
 };
 
 export default Launch;

@@ -117,7 +117,7 @@ const Rockets: NextPageWithLayout = () => {
 };
 
 Rockets.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="Index">{page}</Layout>;
+  return <Layout title="Rockets">{page}</Layout>;
 };
 
 export default Rockets;

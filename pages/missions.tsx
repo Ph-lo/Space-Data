@@ -32,8 +32,6 @@ const query = `
   website
 `;
 
-const getTotalPages = () => {};
-
 const Missions: NextPageWithLayout = () => {
   const [offset, setOffset] = useState(0);
   const [dropDown, setDropDown] = useState<{toggle: boolean, elem: string}>({toggle: false, elem: ""});
@@ -112,7 +110,7 @@ const Missions: NextPageWithLayout = () => {
                                   {mission.description}
                                 </p>
                               ) : (
-                                <p className="leading-relaxed line-clamp-4">
+                                <p className="leading-relaxed line-clamp-2">
                                   {mission.description}
                                 </p>
                               )}
@@ -140,7 +138,7 @@ const Missions: NextPageWithLayout = () => {
 };
 
 Missions.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="Index">{page}</Layout>;
+  return <Layout title="Missions">{page}</Layout>;
 };
 
 export default Missions;

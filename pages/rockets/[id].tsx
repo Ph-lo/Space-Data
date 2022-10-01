@@ -59,7 +59,7 @@ const Rocket: NextPageWithLayout = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(data.rocket.height.meters)
+      console.log(data.rocket.height.meters);
 
       setRocketInfos(data.rocket);
     }
@@ -72,9 +72,15 @@ const Rocket: NextPageWithLayout = () => {
           <Loader />
         ) : (
           <>
-            <button onClick={() => router.back()} className="bg-sky-900 w-12 h-12 rounded-3xl rotate-180 text-2xl text-gray-300">&#x2794;</button>
-            
+            <button
+              onClick={() => router.back()}
+              className="bg-sky-900 w-12 h-12 rounded-3xl rotate-180 text-2xl text-gray-300"
+            >
+              &#x2794;
+            </button>
+
             <div className="text-center mb-20">
+             
               <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">
                 {rocketInfos?.name}
               </h1>
@@ -199,7 +205,10 @@ const Rocket: NextPageWithLayout = () => {
                 </div>
               </div>
             </div>
-            <a href={rocketInfos?.wikipedia} className="flex w-36 justify-center mx-auto mt-16 text-white bg-sky-700 border-0 py-2 px-8 focus:outline-none hover:bg-sky-800 rounded text-lg">
+            <a
+              href={rocketInfos?.wikipedia}
+              className="flex w-36 justify-center mx-auto mt-16 text-white bg-sky-700 border-0 py-2 px-8 focus:outline-none hover:bg-sky-800 rounded text-lg"
+            >
               Wikipedia
             </a>
           </>
