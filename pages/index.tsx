@@ -1,21 +1,13 @@
-import type { NextPage } from "next";
 import Layout from "../components/Layout";
-
-import { gql, useQuery } from "@apollo/client";
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "./_app";
 import spacexLogo from "../assets/logo.png";
 import Image from "next/image";
-import Link from "next/link";
 
 const Home: NextPageWithLayout = () => {
   return (
     <section className="xs:mt-16 text-gray-400 bg-gray-900 body-font">
-        <div className="container w-full mx-auto">
-        {/* <h1 className="title-font mt-16 text-center sm:text-xl text-xl underline underline-offset-4 decoration-1 mb-4 font-light text-white">
-          Space-Data is a project about space, space vehicles and missions using mostly SpaceX data. 
-        </h1> */}
-        </div>
+      <div className="container w-full mx-auto"></div>
       <div className="container mx-auto flex px-5 py-16 lg:flex-row flex-col items-center">
         <div className="lg:max-w-lg lg:w-full lg:w-1/2 w-5/6 mb-10 md:mb-10">
           <Image
@@ -26,7 +18,8 @@ const Home: NextPageWithLayout = () => {
         </div>
         <div className="lg:flex-grow lg:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
           <h1 className="title-font mb-8 text-center sm:text-xl text-xl underline underline-offset-4 decoration-1 mb-4 font-light text-white">
-            Space-Data is a project about space, space vehicles and missions using mostly SpaceX data. 
+            Space-Data is a project about space, space vehicles and missions
+            using mostly SpaceX data.
           </h1>
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
             Space Exploration Technologies Corp.
@@ -52,7 +45,10 @@ const Home: NextPageWithLayout = () => {
               There's a tremendous bias against taking risks. Everyone is trying
               to optimize their ass-covering.
             </p>
-            <a href="https://en.wikipedia.org/wiki/Elon_Musk" className="text-white font-medium title-font tracking-wider text-sm">
+            <a
+              href="https://en.wikipedia.org/wiki/Elon_Musk"
+              className="text-white font-medium title-font tracking-wider text-sm"
+            >
               Elon Musk
             </a>
             <p className="text-xs text-gray-500">CEO</p>

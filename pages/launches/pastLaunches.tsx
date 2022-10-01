@@ -6,11 +6,6 @@ import { NextPageWithLayout } from "../_app";
 import Launches from "../../components/Launches";
 import Loader from "../../components/Loader";
 
-type Props = {
-  title: string;
-  query: string;
-};
-
 interface LaunchesData {
   id: string;
   mission_name: string;
@@ -50,7 +45,7 @@ id
 `;
 
 const pastLaunches: NextPageWithLayout = () => {
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffset] = useState(0);
   const LAUNCHES = gql`
   query {
     launchesPast(limit: 10, offset: ${offset}) {
@@ -73,7 +68,11 @@ const pastLaunches: NextPageWithLayout = () => {
               <Loader />
             ) : (
               <>
-                <Launches launches={data.launchesPast} offset={offset} setOffset={setOffset} />
+                <Launches
+                  launches={data.launchesPast}
+                  offset={offset}
+                  setOffset={setOffset}
+                />
               </>
             )}
           </section>
@@ -86,6 +85,5 @@ const pastLaunches: NextPageWithLayout = () => {
 pastLaunches.getLayout = function getLayout(page: ReactElement) {
   return <Layout title="Past launches">{page}</Layout>;
 };
-
 
 export default pastLaunches;

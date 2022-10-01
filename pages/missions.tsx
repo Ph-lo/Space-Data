@@ -34,7 +34,10 @@ const query = `
 
 const Missions: NextPageWithLayout = () => {
   const [offset, setOffset] = useState(0);
-  const [dropDown, setDropDown] = useState<{toggle: boolean, elem: string}>({toggle: false, elem: ""});
+  const [dropDown, setDropDown] = useState<{ toggle: boolean; elem: string }>({
+    toggle: false,
+    elem: "",
+  });
   const MISSIONS = gql`
   query {
     missions(limit: 10, offset: ${offset}) {
@@ -44,33 +47,14 @@ const Missions: NextPageWithLayout = () => {
 `;
   const { loading, error, data } = useQuery<MissionsResult>(MISSIONS);
 
-  const nextPage = () => {
-    window.scrollTo({
-      top: 100,
-      left: 100,
-      behavior: "smooth",
-    });
-    setOffset(offset + 10);
-  };
-
-  const previousPage = () => {
-    window.scrollTo({
-      top: 100,
-      left: 100,
-      behavior: "smooth",
-    });
-    setOffset(offset - 10);
-  };
-
   const toggleDropDown = (elemId: string) => {
     if (elemId === dropDown.elem) {
-      setDropDown({toggle: (dropDown.toggle ? false : true), elem: elemId})
+      setDropDown({ toggle: dropDown.toggle ? false : true, elem: elemId });
     } else {
-      setDropDown({toggle: true, elem: elemId})
+      setDropDown({ toggle: true, elem: elemId });
     }
   };
 
-//  console.log(data);
   return (
     <div>
       <main>
@@ -90,14 +74,14 @@ const Missions: NextPageWithLayout = () => {
                         <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
                           <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex">
                             <span className="mb-4 font-semibold title-font text-white">
-                                <a href={mission.wikipedia}>
-                                <Image src={wikipedia} alt='wikipedia logo' />
-                                </a>
+                              <a href={mission.wikipedia}>
+                                <Image src={wikipedia} alt="wikipedia logo" />
+                              </a>
                             </span>
                             <span className="ml-5 text-gray-500 text-sm">
-                                <a href={mission.twitter}>
-                                <Image src={twitter} alt='twitter logo' />
-                                </a>
+                              <a href={mission.twitter}>
+                                <Image src={twitter} alt="twitter logo" />
+                              </a>
                             </span>
                           </div>
                           <div className="md:flex-grow">
@@ -105,7 +89,8 @@ const Missions: NextPageWithLayout = () => {
                               {mission.name}
                             </h2>
                             <div className="flex">
-                              {(dropDown.toggle && dropDown.elem === mission.id) ? (
+                              {dropDown.toggle &&
+                              dropDown.elem === mission.id ? (
                                 <p className="leading-relaxed">
                                   {mission.description}
                                 </p>
@@ -115,12 +100,26 @@ const Missions: NextPageWithLayout = () => {
                                 </p>
                               )}
                               <div className="flex flex-col justify-end ml-3">
-                                <button onClick={() => toggleDropDown(mission.id)} className="border-2 border-sky-800 text-sky-800 hover:text-sky-600 hover:border-sky-600 rounded-xl h-6 w-6"> {(dropDown.toggle && dropDown.elem === mission.id) ? <p className="mt-0.5">^</p> : <p className="-mt-1.5">⌄</p> } </button>
+                                <button
+                                  onClick={() => toggleDropDown(mission.id)}
+                                  className="border-2 border-sky-800 text-sky-800 hover:text-sky-600 hover:border-sky-600 rounded-xl h-6 w-6"
+                                >
+                                  {" "}
+                                  {dropDown.toggle &&
+                                  dropDown.elem === mission.id ? (
+                                    <p className="mt-0.5">^</p>
+                                  ) : (
+                                    <p className="-mt-1.5">⌄</p>
+                                  )}{" "}
+                                </button>
                               </div>
                             </div>
-                            <a title="Official website" href={mission.website} className="mb-8 mt-9 text-sky-600 inline-flex items-center mt-4">
-                              Official website
-                              &#8594;
+                            <a
+                              title="Official website"
+                              href={mission.website}
+                              className="mb-8 mt-9 text-sky-600 inline-flex items-center mt-4"
+                            >
+                              Official website &#8594;
                             </a>
                           </div>
                         </div>
