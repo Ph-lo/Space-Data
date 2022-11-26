@@ -9,11 +9,11 @@
 
 This project has been done with the sole purpose of starting working with Next.js and graphql with apollo client.
 
-<p float="left" >
-  <img width="430px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/one.png" />
-  <img width="430px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/two.png" />
-  <img width="430px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/three.png" />
-  <img width="430px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/four.png" />
+<p float="lef" >
+  <img width="460px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/one.png" />
+  <img width="460px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/two.png" />
+  <img width="460px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/three.png" />
+  <img width="460px" src="https://github.com/Ph-lo/graphql-getstarted/blob/main/four.png" />
 </p>
 
 ## Setup
